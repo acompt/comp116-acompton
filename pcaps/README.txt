@@ -39,7 +39,7 @@ set2.pcap
 			Port: 80
 
 14. How many pairs are legitimate:
-		2
+		1
 15. How did I verify successful pairs:
 		Search IP address in wireshark and follow tcp stream to see if login was successful.
 16. Advice to users:
