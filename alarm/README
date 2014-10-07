@@ -1,0 +1,23 @@
+Andrea Compton
+10/07/14
+Security Assignment 2
+ALARM.RB
+
+1. correctly implemented everything to the best of my knowledge
+2. collaborated with Alex Salvatore and macgil
+3. hours spent: 10
+
+Are the heuristics used even that good?
+The heuristics are pretty good, however they are not the best. For example the 
+credit card scans pick up many things that are not actually credit card numbers
+leaked in the clear. Because we use pattern matching in the log file we may get 
+a bunch of false positives like the credit card scan. We were looking for
+certain patterns and thus the alert would be triggered any time the pattern was
+found and not necessarily only when something was leaked.
+
+What would I add or do differently with regards to detecting incidents?
+If I had more time I would add functionality to be able to check different
+types of packets. I would also try to implement a different way to check for
+credit cards that resulted in fewer false positives. You could even set up a 
+service to have this program run in the background of your computer and send 
+you a message any time there is an alert.
