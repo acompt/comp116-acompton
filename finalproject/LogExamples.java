@@ -1,4 +1,8 @@
-//create list of locations with user names for each "log"
+// LogExample.java
+// Andrea Compton
+// 12/12/14
+// run with java -classpath ./ LogExapmles
+// create list of locations with user names for each "log"
 
 import java.util.List;
 import java.util.Collection;

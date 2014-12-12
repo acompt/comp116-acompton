@@ -1,4 +1,8 @@
-//run with java -classpath ./ MapDisplay
+// MapDisplay.java
+// Andrea Compton
+// 12/12/14
+// run with java -classpath ./ MapDisplay
+// Displays users at Amazon's specified locations
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -68,17 +72,10 @@ public class MapDisplay {
                 for (String key : map.keySet()) {
                     String[] users = map.get(key).toArray(new String[0]);
                     ListPanel panel = new ListPanel(users);
-                    JButton btn = new JButton(new ButtonAction(String.valueOf(map.get(key).size()), KeyEvent.VK_A, panel));
+                    JButton btn = new JButton(
+                                    new ButtonAction(String.valueOf(map.get(key).size()), 
+                                                     KeyEvent.VK_A, panel));
                     btn.setBounds(getPositionX(key), getPositionY(key), 30, 30);
-                    // final String[] users = map.get(key).toArray(new String[0]);
-                    // final ListPanel panel = new ListPanel(users);
-                    // btn.addActionListener( new ActionListener() {
-                    //     @Override
-                    //     public void actionPerformed(ActionEvent e) {
-                            
-                    //         panel.display();
-                    //     }
-                    // });
                     add(btn);
                 }
             }
@@ -94,6 +91,7 @@ public class MapDisplay {
         frame.setVisible(true);
     }
 
+    // hardcoded X coordinate for each location
     private int getPositionX(String region){
     	if (region.equals("us-west-2"))
     		return 120;
@@ -116,6 +114,7 @@ public class MapDisplay {
     	return 0;
     }
 
+    // hardcoded Y coordinate for each location
     private int getPositionY(String region){
     	if (region.equals("us-west-2"))
     		return 140;
@@ -138,6 +137,7 @@ public class MapDisplay {
     	return 0;
     }
 
+    // opens new panel of users upon click
     private class ButtonAction extends AbstractAction {
         private ListPanel panel;
         public ButtonAction(String name, Integer mnemonic, ListPanel panel) {
@@ -161,7 +161,8 @@ class ImageUtils {
             ImageIcon ii = new ImageIcon(filename);
             bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g2d = (Graphics2D) bi.createGraphics();
-            g2d.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY));
+            g2d.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING, 
+                                            RenderingHints.VALUE_RENDER_QUALITY));
             g2d.drawImage(ii.getImage(), 0, 0, width, height, null);
         } catch (Exception e) {
             return null;
@@ -174,7 +175,8 @@ class ImageUtils {
         try {
             bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g2d = (Graphics2D) bi.createGraphics();
-            g2d.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY));
+            g2d.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING, 
+                                            RenderingHints.VALUE_RENDER_QUALITY));
             g2d.drawImage(filename, 0, 0, width, height, null);
         } catch (Exception e) {
             return null;

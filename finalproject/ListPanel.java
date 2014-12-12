@@ -1,3 +1,9 @@
+// ListPanel.java
+// Andrea Compton
+// 12/12/14
+// run with java -classpath ./ ListPanel
+// Creates panel with list of users
+
 import java.awt.*;
 import java.util.Arrays;
 import javax.swing.*;
